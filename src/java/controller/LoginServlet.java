@@ -141,8 +141,8 @@ public class LoginServlet extends HttpServlet {
                     
                     //agregar las cookie a la respuesta
                     response.addCookie(cookie);
-                    request.getRequestDispatcher("/jsp/usuario.jsp").
-                            forward(request, response);
+                    //request.getRequestDispatcher("/jsp/usuario.jsp").forward(request,response);
+                    response.sendRedirect(request.getContextPath() + "/jsp/usuario.jsp");
                 } else {
                     request.getRequestDispatcher("/jsp/error.jsp").
                             forward(request, response);
